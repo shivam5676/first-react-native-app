@@ -26,7 +26,7 @@ export default function App() {
       </View>
       <View>
         {nameArray.map((current,index) => {
-          return <Text key={index}>{current}</Text>;
+          return <Text key={index} style={styles.textContainer}>{current}</Text>;
         })}
       </View>
     </View>
@@ -35,14 +35,20 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    height:700,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     borderLeftWidth:5,
+    borderWidth:4,
+    borderColor:"blue"
   },
   inputContainer: {
     borderStyle: "solid",
     borderColor: "black",
-  },
+  },textContainer:{
+    width:100,
+    backgroundColor:"red"
+  }
 });
