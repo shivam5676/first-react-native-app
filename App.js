@@ -1,6 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import FlatList from "./components/FlatList";
+import ElevatedCards from "./components/ElevatedCards";
+import TrendingPlaces from "./components/TrendingPlaces";
+import BlogCards from "./components/BlogCards";
+import Members from "./components/Members";
 
 export default function App() {
   // let nameFieldData=""
@@ -11,44 +23,33 @@ export default function App() {
   };
   console.log(nameArray);
   return (
-    <View style={styles.container}>
-      <View>
-        <Text>Name form</Text>
-        <TextInput
-          placeholder="enter name "
-          onChangeText={(text) => {
-            setName(text);
-          }}
-        />
-        <View style={styles.inputContainer}>
-          <Button title="add name" onPress={addNameHandler}></Button>
-        </View>
-      </View>
-      <View>
-        {nameArray.map((current,index) => {
-          return <Text key={index} style={styles.textContainer}>{current}</Text>;
-        })}
-      </View>
-    </View>
+    <ScrollView style={styles.container}>
+      <FlatList></FlatList>
+      <ElevatedCards></ElevatedCards>
+      <TrendingPlaces></TrendingPlaces>
+      <BlogCards></BlogCards>
+      <Members></Members>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    height:700,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    borderLeftWidth:5,
-    borderWidth:4,
-    borderColor:"blue"
+    marginTop: 20,
+    flex: 1,
+    // height:700,
+    backgroundColor: "black",
+    // alignItems: "center",
+    // justifyContent: "center",
+    borderLeftWidth: 5,
+    borderWidth: 4,
   },
   inputContainer: {
     borderStyle: "solid",
     borderColor: "black",
-  },textContainer:{
-    width:100,
-    backgroundColor:"red"
-  }
+  },
+  textContainer: {
+    width: 100,
+    backgroundColor: "red",
+  },
 });
