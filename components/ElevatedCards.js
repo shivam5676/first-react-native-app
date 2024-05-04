@@ -6,15 +6,12 @@ const ElevatedCards = () => {
     <View>
       <Text style={styles.textHeading}>Elevated Cards</Text>
       <ScrollView horizontal={true} style={styles.scrollContainer}>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
-        <Text style={styles.Card}>dd</Text>
+        <Text style={styles.Card}>Testing</Text>
+        <Text style={styles.Card}>Testing 1</Text>
+        <Text style={styles.Card}>Testing 2</Text>
+        <Text style={styles.Card}>Testing 3</Text>
+        <Text style={styles.Card}>Testing 4</Text>
+    
       </ScrollView>
     </View>
   );
@@ -27,10 +24,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   Card: {
-    backgroundColor: "#F8F8F8",
+    backgroundColor: "#D3D3D3",
     height: 100,
     width: 140,
-    marginRight: 5,borderRadius:10
+    marginRight: 5,
+    borderRadius: 10,
+    textAlignVertical:"center",
+    textAlign:"center",fontSize:15,fontWeight:"bold"
   },
   scrollContainer: {
     flexDirection: "row",

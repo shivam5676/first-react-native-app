@@ -51,7 +51,7 @@ paddingVertical:10,
     marginTop: 10,
   },
   textBtn: {
-    color: "skyblue",
+    color: "green",
     fontWeight: "bold",
     fontSize: 18,
   },

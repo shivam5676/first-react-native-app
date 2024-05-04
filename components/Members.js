@@ -8,14 +8,14 @@ const Members = () => {
       <View style={styles.memberCard}>
         <Image style={styles.imageContainer} source={mishraFunny}></Image>
         <View style={styles.memberInfo}>
-          <Text style={styles.memberName}>hello</Text>
-          <Text style={styles.memberPosition}>hello2</Text>
+          <Text style={styles.memberName}>Member name</Text>
+          <Text style={styles.memberPosition}>member position will go here</Text>
         </View>
       </View><View style={styles.memberCard}>
         <Image style={styles.imageContainer} source={mishraFunny}></Image>
         <View style={styles.memberInfo}>
-          <Text style={styles.memberName}>hello</Text>
-          <Text style={styles.memberPosition}>hello2</Text>
+          <Text style={styles.memberName}>Member name</Text>
+          <Text style={styles.memberPosition}>member position will go here</Text>
         </View>
       </View>
     </View>

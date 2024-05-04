@@ -7,7 +7,7 @@ const FlatList = () => {
       <Text style={styles.textHeading}>Flat Cards</Text>
       <View style={styles.flatContainer}>
         <Text style={styles.redCard}>Red</Text>
-        <Text style={styles.yellowCard}>Red</Text>
+        <Text style={styles.yellowCard}>Yellow</Text>
         <Text style={styles.redCard}>Red</Text>
       </View>
     </View>
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     textAlign: "center",
     textAlignVertical: "center",
+    fontSize:25
   },
   yellowCard: {
     backgroundColor: "gold",
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    textAlignVertical: "center",
+    textAlignVertical: "center",  fontSize:25
   },
 });
 
