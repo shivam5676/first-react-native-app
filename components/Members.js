@@ -1,12 +1,22 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
-
+import mishraFunny from "../assets/icon.png";
 const Members = () => {
   return (
     <View>
       <Text style={styles.textHeading}>Our Team </Text>
       <View style={styles.memberCard}>
-        <Image style={styles.imageContainer} source={'../assets/icon.png'}></Image>
+        <Image style={styles.imageContainer} source={mishraFunny}></Image>
+        <View style={styles.memberInfo}>
+          <Text style={styles.memberName}>hello</Text>
+          <Text style={styles.memberPosition}>hello2</Text>
+        </View>
+      </View><View style={styles.memberCard}>
+        <Image style={styles.imageContainer} source={mishraFunny}></Image>
+        <View style={styles.memberInfo}>
+          <Text style={styles.memberName}>hello</Text>
+          <Text style={styles.memberPosition}>hello2</Text>
+        </View>
       </View>
     </View>
   );
@@ -20,6 +30,29 @@ const styles = StyleSheet.create({
   },
   memberCard: {
     width: "100%",
+    paddingBottom: 10,
+  },
+  imageContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+  },
+  memberCard: {
+    flex: 1,
+    flexDirection: "row",
+    paddingBottom: 5,
+  },
+  memberInfo: {
+    color: "white",
+    padding: 10,
+  },
+  memberName: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+  memberPosition: {
+    color: "white",
   },
 });
 
