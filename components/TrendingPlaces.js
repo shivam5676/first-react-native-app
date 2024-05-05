@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   textHeading: {
     color: "white",
     fontWeight: "900",
-    fontSize: 25,
+    fontSize: 22,
     paddingVertical: 10,
   },
   placeCard: {

@@ -9,16 +9,16 @@ const FooterNavBar = () => {
   return (
     <View style={styles.navContainer}>
       {/* <View></View> */}
-      <FontAwesome name="home" size={35} color="silver" />
-      <MaterialIcons name="person-add-alt-1" size={35} color="silver" />
+      <FontAwesome name="home" size={35} color="white" />
+      <MaterialIcons name="person-add-alt-1" size={35} color="white" />
       <View style={styles.redCircle}>
-        <MaterialIcons name="sms" size={40} color="#ffb61e" />
+        <MaterialIcons name="sms" size={40} color="#8e44ad" />
       </View>
-      <FontAwesome6 name="heart-circle-check" size={35} color="silver" />
+      <FontAwesome6 name="heart-circle-check" size={35} color="white" />
       <MaterialCommunityIcons
         name="shield-account"
         size={35}
-        color="silver"
+        color="white"
       />
     </View>
   );
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     alignItems:"center",
     borderTopWidth: 2,
     borderColor: "#ffb61e",
+    backgroundColor:"#8e44ad"
   },
   redCircle: {
     display: "flex",
