@@ -4,7 +4,7 @@ import React from "react";
 const FlatList = () => {
   return (
     <View>
-      <Text style={styles.textHeading}>Flat Cards</Text>
+      <Text style={styles.textHeading}>People May You Like</Text>
       <View style={styles.flatContainer}>
         <Text style={styles.redCard}>Red</Text>
         <Text style={styles.yellowCard}>Yellow</Text>

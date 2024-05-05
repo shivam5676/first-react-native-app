@@ -9,10 +9,14 @@ import {
   View,
 } from "react-native";
 import FlatList from "./components/FlatList";
-import ElevatedCards from "./components/ElevatedCards";
+// import ElevatedCards from "./components/ElevatedCards";
 import TrendingPlaces from "./components/TrendingPlaces";
 import BlogCards from "./components/BlogCards";
 import Members from "./components/Members";
+import StatusCards from "./components/StatusCards";
+import PeopleMayYouLike from "./components/PeopleMayYouLike";
+import FooterNavBar from "./components/FooterNavBar";
+import HeaderNavBar from "./components/HeaderNavBar";
 
 export default function App() {
   // let nameFieldData=""
@@ -23,24 +27,28 @@ export default function App() {
   };
   console.log(nameArray);
   return (
-    <ScrollView style={styles.container}>
-      <FlatList></FlatList>
-      <ElevatedCards></ElevatedCards>
-      <TrendingPlaces></TrendingPlaces>
-      <BlogCards></BlogCards>
-      <Members></Members>
-    </ScrollView>
+    <View style={{height:"100%"}}>
+      <HeaderNavBar></HeaderNavBar>
+      <ScrollView style={styles.container}>
+        {/* <FlatList></FlatList> */}
+        <StatusCards></StatusCards>
+        <PeopleMayYouLike></PeopleMayYouLike>
+        <TrendingPlaces></TrendingPlaces>
+        <BlogCards></BlogCards>
+        <Members></Members>
+      </ScrollView>
+      <FooterNavBar></FooterNavBar>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
+    // marginTop: 20,
     flex: 1,
     // height:700,
     backgroundColor: "black",
-    // alignItems: "center",
-    // justifyContent: "center",
+
     borderLeftWidth: 5,
     borderWidth: 4,
   },

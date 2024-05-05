@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 
-const ElevatedCards = () => {
+const PeopleMayYouLike = () => {
   return (
     <View>
-      <Text style={styles.textHeading}>Elevated Cards</Text>
+      <Text style={styles.textHeading}>People May You Like</Text>
       <ScrollView horizontal={true} style={styles.scrollContainer}>
         <Text style={styles.Card}>Testing</Text>
         <Text style={styles.Card}>Testing 1</Text>
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ElevatedCards;
+export default PeopleMayYouLike;
