@@ -21,11 +21,10 @@ const StatusCards = () => {
         <View style={styles.outerMessageBox}>
           <Text style={styles.Card}>Testing</Text>
         </View>
-
-        {/* <Text style={styles.Card}>Testing 1</Text>
-        <Text style={styles.Card}>Testing 2</Text>
-        <Text style={styles.Card}>Testing 3</Text>
-        <Text style={styles.Card}>Testing 4</Text> */}
+        <View style={styles.outerMessageBox}>
+          <Text style={styles.Card}>Testing</Text>
+        </View>
+  
       </ScrollView>
     </View>
   );

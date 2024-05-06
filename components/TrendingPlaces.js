@@ -20,7 +20,7 @@ const TrendingPlaces = () => {
             <MaterialCommunityIcons
               name={!liked?"cards-heart-outline":"cards-heart"}
               size={24}
-              color={!liked?"black":"red"}
+              color={!liked?"black":"purple"}
             
               onPress={() => {
                 setliked(!liked);

@@ -3,23 +3,20 @@ import React from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { FontAwesome6 } from '@expo/vector-icons';
 
-import { FontAwesome6 } from "@expo/vector-icons";
 const FooterNavBar = () => {
   return (
     <View style={styles.navContainer}>
       {/* <View></View> */}
       <FontAwesome name="home" size={35} color="white" />
       <MaterialIcons name="person-add-alt-1" size={35} color="white" />
-      <View style={styles.redCircle}>
-        <MaterialIcons name="sms" size={40} color="#8e44ad" />
+      <View style={styles.centerCircle}>
+        {/* <MaterialIcons name="sms" size={40} color="#8e44ad" /> */}
+        <MaterialIcons name="add-box" size={40} color="#8e44ad" />
       </View>
       <FontAwesome6 name="heart-circle-check" size={35} color="white" />
-      <MaterialCommunityIcons
-        name="shield-account"
-        size={35}
-        color="white"
-      />
+      <MaterialCommunityIcons name="shield-account" size={35} color="white" />
     </View>
   );
 };
@@ -29,15 +26,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     height: 50,
-    // position: "absolute", //i want to make this at the bottom
-    // bottom:0
+
     justifyContent: "space-evenly",
-    alignItems:"center",
-    borderTopWidth: 2,
+    alignItems: "center",
+    borderTopWidth: 3,
     borderColor: "#ffb61e",
-    backgroundColor:"#8e44ad"
+    backgroundColor: "#8e44ad",
   },
-  redCircle: {
+  centerCircle: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

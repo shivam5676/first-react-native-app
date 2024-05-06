@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Button, Image } from "react-native";
 import React from "react";
 
 const PeopleMayYouLike = () => {
@@ -6,12 +6,44 @@ const PeopleMayYouLike = () => {
     <View>
       <Text style={styles.textHeading}>People May You Like</Text>
       <ScrollView horizontal={true} style={styles.scrollContainer}>
-        <Text style={styles.Card}>Testing</Text>
-        <Text style={styles.Card}>Testing 1</Text>
-        <Text style={styles.Card}>Testing 2</Text>
-        <Text style={styles.Card}>Testing 3</Text>
-        <Text style={styles.Card}>Testing 4</Text>
-    
+        <View style={styles.Card}>
+          <Image style={styles.circlePic} alt="profile pic"></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View>
+        <View style={styles.Card}>
+          <Image style={styles.circlePic}></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View><View style={styles.Card}>
+          <Image style={styles.circlePic}></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View><View style={styles.Card}>
+          <Image style={styles.circlePic}></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View><View style={styles.Card}>
+          <Image style={styles.circlePic}></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View><View style={styles.Card}>
+          <Image style={styles.circlePic}></Image>
+          <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
+            Shivam singh sa sdd
+          </Text>
+          <Button title="Add" color={"purple"}></Button>
+        </View>
       </ScrollView>
     </View>
   );
@@ -25,17 +57,37 @@ const styles = StyleSheet.create({
   },
   Card: {
     backgroundColor: "#D3D3D3",
-    height: 100,
+    height: 130,
     width: 140,
     marginRight: 5,
     borderRadius: 10,
-    textAlignVertical:"center",
-    textAlign:"center",fontSize:15,fontWeight:"bold"
+    textAlignVertical: "center",
+    textAlign: "center",
+    fontSize: 15,
+    fontWeight: "bold",
+    alignItems: "center",
   },
   scrollContainer: {
     flexDirection: "row",
     flexWrap: "nowrap",
     overflow: "scroll",
+  },
+  circlePic: {
+    width: 70,
+    height: 50,
+    backgroundColor: "white",
+    borderRadius: 10,
+    marginVertical: 5,
+  },
+  usersName: {
+    width: "100%",
+    display: "flex",
+
+    paddingHorizontal: 10,
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 15,
+    marginBottom:5
   },
 });
 
