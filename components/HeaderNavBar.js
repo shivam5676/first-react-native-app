@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Modal } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
@@ -7,23 +7,35 @@ const HeaderNavBar = () => {
   const statusBarHeight = Constants.statusBarHeight;
 
   return (
-    <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
-      <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
-      <View style={{ display: "flex", flexDirection: "row" }}>
-        <Ionicons
-          name="notifications"
-          size={25}
-          color="#ffffff"
-          style={{ marginHorizontal: 10 }}
-        />
-        <MaterialCommunityIcons
-          name="message-reply-text"
-          size={28}
-          color="#ffffff"
-          style={{ marginHorizontal: 15 }}
-        />
+    <>
+      {/* <Modal
+        statusBarTranslucent={true}
+        style={{
+          height: "100%",
+          backgroundColor: "black",
+          marginTop: statusBarHeight,
+        }}
+      >
+        <Text>ghgghgf</Text>
+      </Modal> */}
+      <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
+        <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <Ionicons
+            name="notifications"
+            size={25}
+            color="#ffffff"
+            style={{ marginHorizontal: 10 }}
+          />
+          <MaterialCommunityIcons
+            name="message-reply-text"
+            size={28}
+            color="#ffffff"
+            style={{ marginHorizontal: 15 }}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({

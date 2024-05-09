@@ -27,7 +27,8 @@ export default function App() {
   };
   console.log(nameArray);
   return (
-    <View style={{height:"100%"}}>
+    <View style={{height:"100%",backgroundColor:"transparent"}}>
+      <StatusBar></StatusBar>
       <HeaderNavBar></HeaderNavBar>
       <ScrollView style={styles.container}>
         {/* <FlatList></FlatList> */}

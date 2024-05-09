@@ -1,26 +1,44 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Modal, StatusBar } from "react-native";
 import React from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { FontAwesome6 } from '@expo/vector-icons';
+import { FontAwesome6 } from "@expo/vector-icons";
 
 const FooterNavBar = () => {
   return (
-    <View style={styles.navContainer}>
-      {/* <View></View> */}
-      <FontAwesome name="home" size={35} color="white" />
-      <MaterialIcons name="person-add-alt-1" size={35} color="white" />
-      <View style={styles.centerCircle}>
-        {/* <MaterialIcons name="sms" size={40} color="#8e44ad" /> */}
-        <MaterialIcons name="add-box" size={40} color="#8e44ad" />
+    <View>
+      {/* <View style={styles.navAction}></View> */}
+      {/* <View style={styles.space}></View> */}
+      <View style={styles.navContainer}>
+        <FontAwesome name="home" size={35} color="white" />
+        <MaterialIcons name="person-add-alt-1" size={35} color="white" />
+        <View style={styles.centerCircle}>
+          {/* <MaterialIcons name="sms" size={40} color="#8e44ad" /> */}
+          <MaterialIcons name="add-box" size={40} color="#8e44ad" />
+        </View>
+        <FontAwesome6 name="heart-circle-check" size={35} color="white" />
+        <MaterialCommunityIcons name="shield-account" size={35} color="white" />
       </View>
-      <FontAwesome6 name="heart-circle-check" size={35} color="white" />
-      <MaterialCommunityIcons name="shield-account" size={35} color="white" />
+
+   
     </View>
   );
 };
 const styles = StyleSheet.create({
+  navAction: {
+    position: "absolute",
+    bottom: 60,
+    left: 0,
+    width: "100%",
+    backgroundColor: "white",
+    zIndex: 4, // Ensure it's above other elements
+  },
+  space: {
+    width: "100%",
+    height: 20,
+    backgroundColor: "transparent",
+  },
   navContainer: {
     display: "flex",
     flexDirection: "row",
