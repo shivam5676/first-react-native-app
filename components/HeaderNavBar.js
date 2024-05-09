@@ -1,41 +1,34 @@
-import { View, Text, StyleSheet, Modal } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+import InboxMessages from "./inboxMessages";
+import Notifications from "./Notifications";
+// const [openMessages,setOpenMessages]=useState(false)
 const HeaderNavBar = () => {
   const statusBarHeight = Constants.statusBarHeight;
-
+  const [inBoxOpen, setinboxOpen] = useState(false);
+  const [notificationOpen, setNotificationOpen] = useState(false);
   return (
-    <>
-      {/* <Modal
-        statusBarTranslucent={true}
-        style={{
-          height: "100%",
-          backgroundColor: "black",
-          marginTop: statusBarHeight,
-        }}
-      >
-        <Text>ghgghgf</Text>
-      </Modal> */}
-      <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
-        <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <Ionicons
-            name="notifications"
-            size={25}
-            color="#ffffff"
-            style={{ marginHorizontal: 10 }}
-          />
-          <MaterialCommunityIcons
-            name="message-reply-text"
-            size={28}
-            color="#ffffff"
-            style={{ marginHorizontal: 15 }}
-          />
-        </View>
+    <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
+      <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
+      <View style={{ display: "flex", flexDirection: "row" }}>
+        <Ionicons
+          name="notifications"
+          size={25}
+          color="#ffffff"
+          style={{ marginHorizontal: 10 }}
+        />
+        <MaterialCommunityIcons
+          name="message-reply-text"
+          size={28}
+          color="#ffffff"
+          style={{ marginHorizontal: 15 }}
+        />
       </View>
-    </>
+    </View>
   );
 };
 const styles = StyleSheet.create({
