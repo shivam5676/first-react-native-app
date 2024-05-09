@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet, Modal } from "react-native";
+import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -12,23 +12,38 @@ const HeaderNavBar = () => {
   const [inBoxOpen, setinboxOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
   return (
-    <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
-      <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
-      <View style={{ display: "flex", flexDirection: "row" }}>
-        <Ionicons
-          name="notifications"
-          size={25}
-          color="#ffffff"
-          style={{ marginHorizontal: 10 }}
-        />
-        <MaterialCommunityIcons
-          name="message-reply-text"
-          size={28}
-          color="#ffffff"
-          style={{ marginHorizontal: 15 }}
-        />
+    <>
+      <StatusBar statusBarTranslucent={true}></StatusBar>
+      {inBoxOpen && (
+        <InboxMessages inBoxClose={() => setinboxOpen(false)}></InboxMessages>
+      )}
+      {notificationOpen && (
+        <Notifications notificationClose={() => {
+          setNotificationOpen(false)
+        }}></Notifications>
+      )}
+      <View style={[styles.navContainer, { marginTop: statusBarHeight }]}>
+        <Text style={[styles.title, { marginHorizontal: 10 }]}>FunkyMood</Text>
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <Ionicons
+            name="notifications"
+            size={25}
+            color="#ffffff"
+            style={{ marginHorizontal: 10 }}
+            onPress={() => {
+              setNotificationOpen(true);
+            }}
+          />
+          <MaterialCommunityIcons
+            name="message-reply-text"
+            size={28}
+            color="#ffffff"
+            style={{ marginHorizontal: 15 }}
+            onPress={() => setinboxOpen(true)}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({
