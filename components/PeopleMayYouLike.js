@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, ScrollView, Button, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Button,
+  Image,
+} from "react-native";
 import React from "react";
 
 const PeopleMayYouLike = () => {
@@ -19,25 +26,29 @@ const PeopleMayYouLike = () => {
             Shivam singh sa sdd
           </Text>
           <Button title="Add" color={"purple"}></Button>
-        </View><View style={styles.Card}>
+        </View>
+        <View style={styles.Card}>
           <Image style={styles.circlePic}></Image>
           <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
             Shivam singh sa sdd
           </Text>
           <Button title="Add" color={"purple"}></Button>
-        </View><View style={styles.Card}>
+        </View>
+        <View style={styles.Card}>
           <Image style={styles.circlePic}></Image>
           <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
             Shivam singh sa sdd
           </Text>
           <Button title="Add" color={"purple"}></Button>
-        </View><View style={styles.Card}>
+        </View>
+        <View style={styles.Card}>
           <Image style={styles.circlePic}></Image>
           <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
             Shivam singh sa sdd
           </Text>
           <Button title="Add" color={"purple"}></Button>
-        </View><View style={styles.Card}>
+        </View>
+        <View style={styles.Card}>
           <Image style={styles.circlePic}></Image>
           <Text style={styles.usersName} numberOfLines={1} ellipsizeMode="tail">
             Shivam singh sa sdd
@@ -87,7 +98,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 15,
-    marginBottom:5
+    marginBottom: 5,
   },
 });
 

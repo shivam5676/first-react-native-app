@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   redCard: {
     backgroundColor: "red",
     height: 100,
-    // width: 120,
-    flex:1,
+
+    flex: 1,
     marginRight: 5,
     fontWeight: "600",
     display: "flex",
@@ -35,20 +35,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     textAlign: "center",
     textAlignVertical: "center",
-    fontSize:25
+    fontSize: 25,
   },
   yellowCard: {
     backgroundColor: "gold",
     height: 100,
-    // width: 120,
-    flex:1,
+    flex: 1,
     marginRight: 5,
     fontWeight: "600",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    textAlignVertical: "center",  fontSize:25
+    textAlignVertical: "center",
+    fontSize: 25,
   },
 });
 

@@ -27,14 +27,14 @@ export default function App() {
   };
   console.log(nameArray);
   return (
-    <View style={{height:"100%"}}>
+    <View style={{ height: "100%" }}>
       <HeaderNavBar></HeaderNavBar>
       <ScrollView style={styles.container}>
         {/* <FlatList></FlatList> */}
         <StatusCards></StatusCards>
         <PeopleMayYouLike></PeopleMayYouLike>
         <TrendingPlaces></TrendingPlaces>
-        <BlogCards></BlogCards>
+        <BlogCards></BlogCards>       
         <Members></Members>
       </ScrollView>
       <FooterNavBar></FooterNavBar>
