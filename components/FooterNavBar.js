@@ -1,28 +1,78 @@
-import { View, Text, StyleSheet, Modal, StatusBar } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Modal,
+  StatusBar,
+  TouchableWithoutFeedback,
+} from "react-native";
+import React, { useState } from "react";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { FontAwesome6 } from "@expo/vector-icons";
-
+import { FontAwesome5 } from "@expo/vector-icons";
+// import { MaterialCommunityIcons } from "@expo/vector-icons";
 const FooterNavBar = () => {
+  const [addActionOpen, setAddActionOpen] = useState(false);
   return (
-    <View>
-      {/* <View style={styles.navAction}></View> */}
-      {/* <View style={styles.space}></View> */}
-      <View style={styles.navContainer}>
-        <FontAwesome name="home" size={35} color="white" />
-        <MaterialIcons name="person-add-alt-1" size={35} color="white" />
-        <View style={styles.centerCircle}>
-          {/* <MaterialIcons name="sms" size={40} color="#8e44ad" /> */}
-          <MaterialIcons name="add-box" size={40} color="#8e44ad" />
+    <>
+      {addActionOpen && (
+        <Modal transparent>
+          <TouchableWithoutFeedback onPress={() => setAddActionOpen(false)}>
+            <View style={{ height: "100%" }}></View>
+          </TouchableWithoutFeedback>
+          <View style={styles.actionContainer}>
+            <View style={styles.actionCard}>
+              <View>
+                <MaterialCommunityIcons
+                  name="circle-double"
+                  size={40}
+                  color="white"
+                  style={styles.icon}
+                />
+                <Text style={styles.cardText}>Status</Text>
+              </View>
+              <View>
+                <FontAwesome5
+                  name="images"
+                  size={40}
+                  color="white"
+                  style={styles.icon}
+                />
+                <Text style={styles.cardText}>Images</Text>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      )}
+      <View>
+        {/* <View style={styles.navAction}></View> */}
+        {/* <View style={styles.space}></View> */}
+        <View style={styles.navContainer}>
+          <FontAwesome name="home" size={35} color="white" />
+          <MaterialIcons name="person-add-alt-1" size={35} color="white" />
+          <View
+            style={styles.centerCircle}
+            onPress={() => setAddActionOpen(true)}
+          >
+            {/* <MaterialIcons name="sms" size={40} color="#8e44ad" /> */}
+            <MaterialIcons
+              name="add-box"
+              size={40}
+              color="#8e44ad"
+              onPress={() => setAddActionOpen(true)}
+            />
+          </View>
+          <FontAwesome6 name="heart-circle-check" size={40} color="white" />
+          <MaterialCommunityIcons
+            name="shield-account"
+            size={35}
+            color="white"
+          />
         </View>
-        <FontAwesome6 name="heart-circle-check" size={35} color="white" />
-        <MaterialCommunityIcons name="shield-account" size={35} color="white" />
       </View>
-
-   
-    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({
@@ -66,6 +116,34 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderColor: "#ffb61e",
     borderLeftWidth: 2,
+  },
+  actionContainer: {
+    width: "100%",
+    // backgroundColor: "red",
+    // height: 40,
+    position: "absolute",
+    bottom: 90,
+    display: "flex",
+    alignItems: "center",
+  },
+  actionCard: {
+    width: "80%",
+    backgroundColor: "white",
+    // height: 60,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    backgroundColor: "#8e44ad",
+    borderRadius: 10,
+  },
+  cardText: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: "white",
+    paddingBottom: 10,
+  },
+  icon: {
+    paddingTop: 10,
   },
 });
 
