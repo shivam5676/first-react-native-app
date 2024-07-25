@@ -60,15 +60,15 @@ const InboxMessages = (props) => {
 const styles = StyleSheet.create({
   modalContainer: {
     display: "flex",
-    // backgroundColor: "red",
+
     justifyContent: "center",
     width: "100%",
     alignItems: "center",
-    // textAlign: "center",
+
     padding: 8,
-    // height: "100%",
+
     paddingHorizontal: 36,
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
     height: "100%",
   },
@@ -97,10 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     paddingVertical: 10,
   },
-  //   memberCard: {
-  //     width: "100%",
-  //    paddingLeft:"10%"
-  //   },
+
   imageContainer: {
     width: 60,
     height: 60,

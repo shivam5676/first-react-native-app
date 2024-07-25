@@ -14,18 +14,29 @@ const TrendingPlaces = () => {
           resizeMode="cover"
         ></Image>
         <View style={styles.placeContainer}>
-          <Text style={styles.placeTitle}>hawa mahal, jaipur</Text>
+          <View style={styles.placeTitle}>
+            <Text style={styles.userName} numberOfLines={1}>
+              Shivam singh
+            </Text>
+            <Text numberOfLines={3} style={styles.placeDescription}>
+              hawa mahal, jaipurhawa mahal, jaipurhawa mahal, jaipurhawa mahal,
+              jaipurhawa mahal, jaipurhawa mahal, jaipurhawa mahal, jaipurhawa
+              mahal, jaipurhawa mahal, jaipurhawa mahal, jaipur
+            </Text>
+          </View>
           <View style={styles.bottomDetails}>
             <Text style={styles.placeTime}>12 min ago</Text>
-            <MaterialCommunityIcons
-              name={!liked?"cards-heart-outline":"cards-heart"}
-              size={24}
-              color={!liked?"black":"purple"}
-            
-              onPress={() => {
-                setliked(!liked);
-              }}
-            />
+            <View>
+         
+              <MaterialCommunityIcons
+                name={!liked ? "cards-heart-outline" : "cards-heart"}
+                size={24}
+                color={!liked ? "black" : "purple"}
+                onPress={() => {
+                  setliked(!liked);
+                }}
+              />
+            </View>
           </View>
         </View>
       </View>
@@ -43,7 +54,7 @@ const styles = StyleSheet.create({
     // flex:1,
     width: "100%",
     color: "white",
-    height: 300,
+    // height: 300,
     backgroundColor: "white",
     borderRadius: 10,
   },
@@ -60,6 +71,16 @@ const styles = StyleSheet.create({
   },
   placeTitle: {
     fontSize: 20,
+    flexDirection: "column",
+  },
+  userName: {
+    fontWeight: "bold",
+    paddingHorizontal: 10,
+    flexDirection: "column",
+    width: "80%",
+  },
+  placeDescription: {
+    paddingHorizontal: 10,
   },
   bottomDetails: {
     flexDirection: "row",

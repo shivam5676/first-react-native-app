@@ -12,40 +12,18 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import PostBtnModal from "./PostBtnModal";
 // import { MaterialCommunityIcons } from "@expo/vector-icons";
 const FooterNavBar = () => {
   const [addActionOpen, setAddActionOpen] = useState(false);
   return (
     <>
-      {addActionOpen && (
-        <Modal transparent>
-          <TouchableWithoutFeedback onPress={() => setAddActionOpen(false)}>
-            <View style={{ height: "100%" }}></View>
-          </TouchableWithoutFeedback>
-          <View style={styles.actionContainer}>
-            <View style={styles.actionCard}>
-              <View>
-                <MaterialCommunityIcons
-                  name="circle-double"
-                  size={40}
-                  color="white"
-                  style={styles.icon}
-                />
-                <Text style={styles.cardText}>Status</Text>
-              </View>
-              <View>
-                <FontAwesome5
-                  name="images"
-                  size={40}
-                  color="white"
-                  style={styles.icon}
-                />
-                <Text style={styles.cardText}>Images</Text>
-              </View>
-            </View>
-          </View>
-        </Modal>
-      )}
+    {  addActionOpen&&<PostBtnModal
+        onModalClose={() => {
+          setAddActionOpen(false);
+        }}
+      ></PostBtnModal>}
+
       <View>
         {/* <View style={styles.navAction}></View> */}
         {/* <View style={styles.space}></View> */}
