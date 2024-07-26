@@ -1,38 +1,47 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
   Modal,
-  StatusBar,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
-import React, { useState } from "react";
-
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import * as DocumentPicker from "expo-document-picker";
-
-import { FontAwesome5 } from "@expo/vector-icons";
 import axios from "axios";
-// import DocumentPicker from 'react-native-document-picker';
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { FontAwesome5 } from "@expo/vector-icons";
+
 const PostBtnModal = (props) => {
-  console.log("object")
-  const backendUrl = "http://localhost:8000";
-  const filePicker = async () => {axios.post("http:localhost:8000")
+  const backendUrl = "http://192.168.0.113:8000";
+
+  const filePicker = async () => { 
+    try {
+         const response = await axios.get(`${backendUrl}`);
+    console.log(response);
+    } catch (error) {
+      console.log(error)
+    }
+  
     let result = await DocumentPicker.getDocumentAsync({});
-    const formData = new FormData();
+    if (result.type === "cancel") {
+      Alert.alert("No file selected");
+      return;
+    }
 
-    const file = result.assets[0];
-
+    const file = result;
+  
     // Create a form data object
-
-    formData.append("file", {
+    const formData = new FormData();
+    formData.append("videos12345", {
       uri: file.uri,
-      type: file.mimeType,
+      type: file.mimeType || "video/mp4",
       name: file.name,
     });
+
     try {
       const response = await axios.post(
-        `${backendUrl}/upload/video`,
+        `${backendUrl}/videos/upload/`,
         formData,
         {
           headers: {
@@ -40,13 +49,15 @@ const PostBtnModal = (props) => {
           },
         }
       );
-      console.log(response)
+      console.log("Upload Success:", response.data);
     } catch (err) {
-      console.log(err);
+      console.error(
+        "Upload Error:",
+        err.response ? err.response.data : err.message
+      );
     }
-    alert(file.name);
-    console.log(result);
   };
+
   return (
     <Modal transparent>
       <TouchableWithoutFeedback onPress={() => props.onModalClose()}>
@@ -78,11 +89,10 @@ const PostBtnModal = (props) => {
     </Modal>
   );
 };
+
 const styles = StyleSheet.create({
   actionContainer: {
     width: "100%",
-    // backgroundColor: "red",
-    // height: 40,
     position: "absolute",
     bottom: 90,
     display: "flex",
@@ -90,12 +100,10 @@ const styles = StyleSheet.create({
   },
   actionCard: {
     width: "80%",
-    backgroundColor: "white",
-    // height: 60,
+    backgroundColor: "#8e44ad",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: "#8e44ad",
     borderRadius: 10,
   },
   cardText: {
